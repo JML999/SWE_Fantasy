@@ -9,8 +9,11 @@ import MyTable from "./MyTable";
 import StockTable from "./StockTable"
 import OverviewTable from "./OverviewTable"
 import Portfolio from "./Portfolio"
+import SearchBuy from './SearchBuy';
+import SearchSell from './SearchSell';
 
 function App() {
+
   return (
     <Router basename="/react-auth-ui/">
       <div className="App">
@@ -102,7 +105,14 @@ function App() {
           <Route exact path="/Home/Market">
             <div className="FormTitle">
               <NavLink exact to="/Home/Dash" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Dash</NavLink>  <NavLink to="/Home/Market" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Market</NavLink> <NavLink to="/Home/Rank" activeClassName="FormTitle__Link--Active" className="FormTitle__Link">Rank</NavLink>
-              <h1>Select a stock to buy or sell</h1>
+              <h1>Enter a stock to buy:</h1>
+              <h1></h1>
+              <SearchBuy />
+              <h1>Enter a stock to sell:</h1>
+              <h1></h1>
+              <SearchSell />
+      
+              <h1>Popular Stocks:</h1>
               <h1></h1>
               <StockTable />
             </div>
